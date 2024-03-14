@@ -4,26 +4,22 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-      - name: download dependencies
-        run: |
-          # Your ML workflow goes here
-          pip install --upgrade pip
-          pip install numpy
-          pip install -r requirements.txt
       # may need to setup Node.js & Python3 on e.g. self-hosted
       # - uses: actions/setup-python@v4
       #   with:
       #     python-version: '3.x'
       - uses: actions/checkout@v3
+      - name: Train model
+        run: |
+          # Your ML workflow goes here
+          pip install --upgrade pip
+          pip install numpy
+          pip install -r requirements.txt
       - name: Build, tag, and push image
         run: |
           # Build a docker container
           docker build -t tfq2830/rj_project:v1.0.0 .
           docker push tfq2830/rj_project:v1.0.0
-      - name: Train model
-        run: |
-          # Your ML workflow goes here
-          python ./LicensePlateRecognition/main.py  # generate plot.png
   Continuous-Deployment:
     needs: build-and-push
     runs-on: self-hosted
