@@ -12,7 +12,7 @@ jobs:
       - name: Build, tag, and push image
         run: |
           # Build a docker container
-          docker build -t tfq2830/rj_project:v1.0.0
+          docker build -t tfq2830/rj_project:v1.0.0 .
           docker push tfq2830/rj_project:v1.0.0
       - name: Train model
         run: |
