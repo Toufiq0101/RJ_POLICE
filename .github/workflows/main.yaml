@@ -14,6 +14,7 @@ jobs:
           # Your ML workflow goes here
           pip install --upgrade pip
           pip install numpy
+          pip install lap
           pip install -r requirements.txt
       - name: Build, tag, and push image
         run: |
