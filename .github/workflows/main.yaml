@@ -9,13 +9,11 @@ jobs:
       #   with:
       #     python-version: '3.x'
       - uses: actions/checkout@v3
-      - name: Build, tag, and push image to Amazon ECR
+      - name: Build, tag, and push image
         run: |
-          # Build a docker container and
-          # push it to ECR so that it can
-          # be deployed to ECS.
-          docker image build -t tfq2830/rj_project:v1.0.0
-          docker push tfq2830/rj_project:tagname
+          # Build a docker container
+          docker build -t tfq2830/rj_project:v1.0.0
+          docker push tfq2830/rj_project:v1.0.0
       - name: Train model
         run: |
           # Your ML workflow goes here
