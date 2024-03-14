@@ -4,7 +4,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-    - name: download dependencies
+      - name: download dependencies
         run: |
           # Your ML workflow goes here
           pip install --upgrade pip
