@@ -19,7 +19,7 @@ jobs:
       - name: Build, tag, and push image
         run: |
           # Build a docker container
-          echo "$ {{ secrets.DOCKERPWD }}" | docker login -u "tfq2830" --password-stdin
+          echo "${{ secrets.DOCKERPWD }}" | docker login -u "tfq2830" --password-stdin
           docker build -t tfq2830/rj_project:v1.0.0 .
           docker push tfq2830/rj_project:v1.0.0
   Continuous-Deployment:
