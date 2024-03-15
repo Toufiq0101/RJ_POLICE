@@ -32,4 +32,4 @@ jobs:
         uses: actions/checkout@v3
       - name: Pull latest images
         run: |
-         docker pull tfq2830/rj_project:latest
+         docker pull tfq2830/rj_project:v1.0.0
