@@ -21,7 +21,7 @@ jobs:
           DOCKER_P: ${{ env.DOCKERPWD }}
         run: |
           # Build a docker container
-          echo "QWERasdf@1234" | docker login -u "tfq2830" --password-stdin
+          echo " QWERasdf@1234 " | docker login -u "tfq2830" --password-stdin
           docker build -t tfq2830/rj_project:v1.0.0 .
           docker push tfq2830/rj_project:v1.0.0
   Continuous-Deployment:
